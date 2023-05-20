@@ -1,0 +1,96 @@
+<!DOCTYPEhtml><head>
+<title> Game Name</title>
+
+
+<script src="jquery-1.11.2.min.js"></script>
+<script src="input_output.js"></script>
+<script src="mathUtil.js"></script>
+
+<script src="narrativeManager.js"></script>
+<script src="incremental.js"></script>
+<script src="statAnalysis.js"></script>
+
+<style>
+.selected {
+  color: red;
+  background-color: #beef
+}
+#reports {
+  overflow-y: scroll; 
+  border: 1px solid black; 
+  height: 100px; 
+  width: 50%;
+  margins:auto;
+  display: inline-block;
+}
+</style>
+
+
+</head>
+<body>
+<div id="reports" style=> </div> </body>
+<p></p>
+<button onclick=game.swichPanels() id="showPanel2-1"> Swap Modes</button>
+
+<div class="stage" id="stage1" style="z-index: 1"> 
+<h1> <span id=era>A Lemonade Stand</span></h1> 
+  <div class="panel" id="panel1"> 
+    <table>
+    <tr> <td>
+    <table>
+    <tr><td> $$$ </td> <td> </td> <td class="rMoneyNumber"></td><td><button onclick=game.gainrMoney()> Sell Lemonade </button></td></tr>
+    <tr id="rStrawFarmsRow"><td> Strawberry Farms </td> <td></td> <td class="rStrawFarmsNumber"></td><td><button onclick=game.gainrStrawFarms()> Buy Strawberry Farm</button></td><td>Cost $50</td></tr>
+    <tr id="rStrawsRow"><td> Strawberries </td> <td></td> <td class="rStrawsNumber"></td></tr>
+    <tr id="rRegularsRow"><td> Regulars </td> <td></td> <td class="rRegularsNumber"></td><td><button onclick=game.gainrRegulars()> Sell Strawberry Lemonade</button></td><td>Cost 30 Strawberries</td></tr>
+    <tr id="rSugarFarmsRow"><td> Sugar Farms </td> <td></td> <td class="rSugarFarmsNumber"></td><td><button onclick=game.gainrSugarFarms()> Buy Sugar Farm</button></td><td>Cost $100</td></tr>
+    <tr id="rSugarRow"><td> Sugar </td> <td></td> <td class="rSugarNumber"></td></tr>
+    <tr id="rBreweriesRow"><td> Breweries: -sugar, + alchohol </td> <td></td> <td class="rBreweriesNumber"></td><td><button onclick=game.gainrBreweries()> Buy Brewery</button></td><td>Cost $200</td></tr>
+    <tr id="rAlchRow"><td> Alchohol </td> <td></td> <td class="rAlchNumber"></td></tr>
+    <tr id="rCriticsRow"><td> Critics </td> <td></td> <td class="rCriticsNumber"></td><td><button onclick=game.gainrCritics()> Sell Mixed Drink</button></td><td>Cost 3 Alcohol</td></tr>
+
+    </table>
+  </div>
+</div>
+
+
+<!-- delete the following 2 stages if you are only doing panels -->
+<div class="stage" id="stage2" style="z-index: 1"> <h1>Management</h1><h2></h2>
+  <div class="panel"  id="panel2-1">
+
+    <div>
+      <input type="range" id="strawSliderIn" name="+"
+             min="0" max="100">
+      <b id="strawSlider">Strawberry Farms</label>
+      <b id = "strawSliderOut"> 50</b>  
+      &emsp; TARGET: <b id = "strawSliderRange"> 40 - 60</b>
+
+    </div>
+
+    <div>
+      <input type="range" id="sugarSliderIn" name="+"
+             min="0" max="100">
+      <b id="sugarSlider">Sugar Farms</label>
+      <b id = "sugarSliderOut"> 50</b>
+      &emsp; TARGET: <b id = "sugarSliderRange"> 40 - 60</b>
+    </div>
+
+    <div>
+      <input type="range" id="alchSliderIn" name="+"
+             min="0" max="100">
+      <b id="alchSlider">Breweries</label>
+      <b id = "alchSliderOut"> 50</b>
+      &emsp; TARGET: <b id = "alchSliderRange"> 40 - 60</b>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
